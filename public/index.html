@@ -10,23 +10,53 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
+    <!-- CSS for new-tweet -->
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
+
+    <!-- JS for character counter -->
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+
   </head>
 
   <body>
 
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
-      <img class="logo" src="/images/bird.png" width="80px" height="80px">
+      <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
     </nav>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+      <section class="new-tweet">
+          <h2 id='tweetTitle'>Compose Tweet</h2>
+          <form action='/tweets/' method='POST'>
+            <textarea name="text" placeholder="What are you humming about?"></textarea>
+            <input type="submit" value="Tweet">
+            <span class="counter">140</span>
+          </form>
+      </section>
+
+      <p>Spicy jalapeno bacon ipsum dolor amet brisket doner drumstick burgdoggen, spare ribs flank shankle. Turducken pork chop tri-tip, beef doner ham hock cow short loin. Frankfurter pig beef ribs porchetta. Pork belly rump shank ham hock short loin venison chicken bresaola leberkas ball tip biltong boudin kielbasa. Cupim tongue porchetta, leberkas meatball drumstick bresaola prosciutto strip steak filet mignon. Frankfurter kielbasa flank pork belly boudin.</p>
+
+      <p>Rump prosciutto pancetta bresaola meatloaf, filet mignon burgdoggen boudin spare ribs capicola bacon kevin doner beef ribs strip steak. Pork chop rump sirloin, pancetta t-bone prosciutto corned beef. Biltong beef ribs jowl, spare ribs drumstick cow pork belly short loin kevin. Prosciutto meatloaf corned beef alcatra, short loin picanha bacon boudin tail andouille tri-tip beef salami. Turkey shankle pastrami pork chop meatloaf bresaola beef cow corned beef short loin drumstick boudin. Biltong meatloaf turkey shankle venison chicken tri-tip.</p>
+
+      <p>Pork loin turducken ham, porchetta sausage burgdoggen tail tri-tip chicken. Rump landjaeger short ribs capicola. Chuck turkey beef pig beef ribs ball tip burgdoggen boudin cow short ribs jerky. Shankle kielbasa strip steak boudin pork ham hock tail alcatra. Landjaeger doner ham, t-bone venison chicken boudin pancetta hamburger rump drumstick burgdoggen tenderloin sirloin jowl. Tri-tip short ribs shank, ball tip pork belly corned beef rump alcatra.</p>
+
+      <p>Beef ribs burgdoggen meatball rump pig, shoulder sausage beef ball tip flank. Corned beef drumstick meatloaf landjaeger sausage beef ribs pork chop chicken jerky boudin shank meatball. Pork chop porchetta andouille prosciutto pork, fatback turkey pancetta pork loin chuck filet mignon swine drumstick spare ribs landjaeger. Alcatra venison strip steak, corned beef sirloin filet mignon drumstick ribeye tongue andouille shoulder tail sausage. Short ribs swine salami ground round.</p>
+
+      <p>Pork belly rump fatback, kevin turkey sirloin bresaola prosciutto sausage capicola chicken biltong doner. Alcatra cow porchetta leberkas sausage pork chop pancetta spare ribs corned beef t-bone shoulder rump shank ham beef. Beef ribs short loin filet mignon, porchetta jerky jowl sirloin beef frankfurter pork loin. Pancetta ham hock biltong doner pork chop short loin leberkas tongue ham ground round meatball. Doner swine strip steak pig beef ribs, flank pastrami fatback frankfurter hamburger pork salami rump. Ham hock jerky landjaeger brisket t-bone filet mignon bacon pork andouille ribeye flank.</p>
+
     </main>
 
   </body>
