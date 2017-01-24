@@ -4,7 +4,6 @@ $(document).ready(function() {
     let charsInBox = +$(this).val().length;
     let counter = $('.new-tweet').find('.counter');
     counter.text(totalChars - charsInBox);
-    // $(this).siblings('.counter').text(charsLeft - 1);
     if (charsInBox > 140) {
       counter.css({'color': 'red'});
     } else {
