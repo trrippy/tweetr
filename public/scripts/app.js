@@ -63,6 +63,7 @@ $(document).ready(function() {
     tweets.forEach((tweet) => {
       var tweetElement = createTweetElement(tweet);
       $('#tweets-container').prepend(tweetElement);
+      console.log(tweetElement);
 
     });
   }
