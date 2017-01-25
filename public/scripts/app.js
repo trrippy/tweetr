@@ -3,55 +3,43 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-var data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": {
-        "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
-        "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-        "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
-      },
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": "2017-01-24T23:24:17Z"
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": {
-        "small":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png",
-        "regular": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc.png",
-        "large":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png"
-      },
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": "2017-01-24T09:24:17Z"
-  },
-  {
-    "user": {
-      "name": "Johann von Goethe",
-      "avatars": {
-        "small":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png",
-        "regular": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1.png",
-        "large":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png"
-                  },
-      "handle": "@johann49"
-    },
-    "content": {
-      "text": "Es ist nichts schrecklicher als eine tätige Unwissenheit."
-    },
-    "created_at": "2017-01-24T10:24:17Z"
-  }
-];
-
 
 $(document).ready(function() {
+
+  // On form submit
+  $('form').on('submit', function(event){
+    event.preventDefault();
+    if ($('textarea').val().length < 140) {
+      var data = $(this).serialize();
+      $.ajax({
+        url: 'http://localhost:8080/tweets',
+        method: 'POST',
+        data: data
+      }).then(function() {
+        $('#tweet-container').empty();
+        loadTweets();
+      });
+      $('textarea').val('');
+      $('.counter').text('140');
+    } else {
+      alert('STAHHPP I CAN PROCCESS ALL THESE CHARACTERS, MY DEV IS OPPRESSING ME #freeme')
+    }
+  })
+
+
+  function loadTweets(){
+    $.ajax({
+      url: 'http://localhost:8080/tweets',
+      method: 'GET',
+      // success: function (response) {
+      //   renderTweets(response);
+      // }
+    }).then(function (response) {
+      renderTweets(response);
+    })
+  };
+
+  loadTweets();
 
   // Iterates over an array of objects, calls createTweetElement on each, and appends the new element to #tweets-container
   function renderTweets(tweets) {
@@ -60,7 +48,6 @@ $(document).ready(function() {
       $('#tweets-container').append(tweetElement);
 
     });
-    console.log($('#tweets-container'));
   }
 
   // Takes an object and makes it a jquery element
@@ -83,7 +70,8 @@ $(document).ready(function() {
 
     // Footer
     var $footer = $('<footer>');
-    var $timePosted = $('<time>').addClass('timeago').attr('datetime', object['created_at']);
+    console.log(object['created_at']);
+    var $timePosted = $('<time>').text(timeSince(object['created_at']));
     $footer.append($timePosted);
     // Footer Icons
     var $icons = $('<span>').addClass('icons');
@@ -100,18 +88,38 @@ $(document).ready(function() {
     return $output;
   }
 
-  renderTweets(data);
 
-  $('form').on('submit', function(event){
-    event.preventDefault();
-    var test = $(this).serialize();
-    console.log(test);
-  })
+
 
    // This turns time elements with class 'timeago' and an ISO 8601 timestamp into x mins/days/years ago
-  jQuery(document).ready(function() {
-    jQuery("time.timeago").timeago();
-  });
+  function timeSince(date) {
+
+    var seconds = Math.floor((new Date() - date) / 1000);
+
+    var interval = Math.floor(seconds / 31536000);
+
+    if (interval > 1) {
+        return interval + " years ago";
+    }
+    interval = Math.floor(seconds / 2592000);
+    if (interval > 1) {
+        return interval + " months ago";
+    }
+    interval = Math.floor(seconds / 86400);
+    if (interval > 1) {
+        return interval + " days ago";
+    }
+    interval = Math.floor(seconds / 3600);
+    if (interval > 1) {
+        return interval + " hours ago";
+    }
+    interval = Math.floor(seconds / 60);
+    if (interval > 1) {
+        return interval + " minutes ago";
+    }
+    return Math.floor(seconds) + " seconds ago";
+}
+
 });
 
 
