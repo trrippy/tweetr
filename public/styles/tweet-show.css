@@ -6,9 +6,13 @@ article {
 }
 
 article header {
-  background-color: #2FC5CC;
-  padding: .5em .5em 2em .5em;
+  background-color: #f3f3f3;
+  padding: .5em .5em 1.75em .5em;
   border-radius: 10px 10px 0px 0px;
+}
+
+article header:hover {
+  background-color: #eee;
 }
 
 article img {
@@ -35,11 +39,15 @@ article .userMessage {
 }
 
 article footer {
-  border-top: 1px solid gray;
+  border-top: 1px solid #eee;
   font-size: .7em;
   padding: .5em 1em 1em 1em;
 }
 
 article .icons {
   float:right;
+}
+
+article .icons i {
+  padding-right: .5em;
 }

@@ -2,7 +2,8 @@
   margin: 1em 2em 1em 2em;
   padding: 1em;
   border-radius: 10px;
-  background-color: #FFFFFF
+  border: 1px solid gray;
+  background-color: #eee;
 }
 
 .new-tweet textarea {
