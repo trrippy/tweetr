@@ -6,10 +6,27 @@
 
 $(document).ready(function() {
 
+
+  // On compose button click
+  $('#nav-bar').click('button', function() {
+    if ($('.new-tweet').is(':animated')) {
+      return false;
+    }
+    if ($('.new-tweet').is(":visible")) {
+      $('.new-tweet').slideToggle();
+    }
+
+    if ($('.new-tweet').is(":hidden")) {
+      $('.new-tweet').slideToggle();
+      $('textarea').focus();
+    }
+  });
+
   // On form submit
   $('form').on('submit', function(event){
     event.preventDefault();
-    if ($('textarea').val().length < 140) {
+    var $userText = $('textarea').val();
+    if ($userText.length < 140 && $userText.length > 0) {
       var data = $(this).serialize();
       $.ajax({
         url: 'http://localhost:8080/tweets',
@@ -22,7 +39,7 @@ $(document).ready(function() {
       $('textarea').val('');
       $('.counter').text('140');
     } else {
-      alert('STAHHPP I CAN PROCCESS ALL THESE CHARACTERS, MY DEV IS OPPRESSING ME #freeme')
+      alert('STAHHPP I JUST CAN\'T EVEN DEAL RIGHT NOW #freeme #savetheanimals')
     }
   })
 
@@ -99,27 +116,29 @@ $(document).ready(function() {
     var interval = Math.floor(seconds / 31536000);
 
     if (interval > 1) {
-        return interval + " years ago";
+      return interval + ' years ago';
     }
     interval = Math.floor(seconds / 2592000);
     if (interval > 1) {
-        return interval + " months ago";
+      return interval + ' months ago';
     }
     interval = Math.floor(seconds / 86400);
     if (interval > 1) {
-        return interval + " days ago";
+      return interval + ' days ago';
     }
     interval = Math.floor(seconds / 3600);
     if (interval > 1) {
-        return interval + " hours ago";
+      return interval + ' hours ago';
     }
     interval = Math.floor(seconds / 60);
     if (interval > 1) {
-        return interval + " minutes ago";
+      return interval + ' minutes ago';
     }
-    return Math.floor(seconds) + " seconds ago";
-}
-
+    if (seconds < 5) {
+      return 'Just now';
+    }
+    return Math.floor(seconds) + ' seconds ago';
+  }
 });
 
 

@@ -57,3 +57,17 @@ main {
   line-height: 80px;
   font-size: 2em;
  }
+
+ #nav-bar button {
+  float: right;
+  width: 120px;
+  height: 60px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: #E7FDFF;
+  border: 1px solid black;
+ }
+
+ #nav-bar button:hover {
+  background-color: #fff;
+ }
