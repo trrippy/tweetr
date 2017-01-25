@@ -36,6 +36,7 @@ article .profileName {
 
 article .userMessage {
   padding: 0 1em 0 1em;
+  word-spacing: break-word;
 }
 
 article footer {
