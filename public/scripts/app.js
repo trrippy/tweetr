@@ -63,7 +63,6 @@ $(document).ready(function() {
     tweets.forEach((tweet) => {
       var tweetElement = createTweetElement(tweet);
       $('#tweets-container').prepend(tweetElement);
-      console.log(tweetElement);
 
     });
   }
@@ -88,7 +87,6 @@ $(document).ready(function() {
 
     // Footer
     var $footer = $('<footer>');
-    console.log(object['created_at']);
     var $timePosted = $('<time>').text(timeSince(object['created_at']));
     $footer.append($timePosted);
     // Footer Icons
