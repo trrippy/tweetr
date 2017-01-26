@@ -3,16 +3,18 @@ article {
   margin: 2em;
   background-color: #fff;
   border-radius: 10px;
+  opacity: .75;
 }
 
 article header {
-  background-color: #f3f3f3;
+  background-color: #eee;
   padding: .5em .5em 1.75em .5em;
   border-radius: 10px 10px 0px 0px;
 }
 
-article header:hover {
-  background-color: #eee;
+article:hover {
+  opacity: 1;
+
 }
 
 article img {
@@ -47,8 +49,13 @@ article footer {
 
 article .icons {
   float:right;
+  visibility: hidden;
+}
+article:hover .icons{
+  visibility: visible;
 }
 
 article .icons i {
   padding-right: .5em;
 }
+
