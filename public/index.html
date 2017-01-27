@@ -5,6 +5,7 @@
     <title>Tweeter - Home Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
 
@@ -26,8 +27,12 @@
     <!-- CSS for animations -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
-  <!-- CSS for sweet -->
-  <link rel="stylesheet" type="text/css" href="/scripts/dist/sweetalert.css">
+    <!-- CSS for sweet -->
+    <link rel="stylesheet" type="text/css" href="/scripts/dist/sweetalert.css">
+
+    <!-- CSS for emojis -->
+    <link href="/emoji-picker/lib/css/nanoscroller.css" rel="stylesheet">
+    <link href="/emoji-picker/lib/css/emoji.css" rel="stylesheet">
 
   </head>
 
@@ -52,7 +57,8 @@
       <section class="new-tweet">
           <h2 id='tweetTitle'>Compose Tweet</h2>
           <form action='/tweets/' method='POST'>
-            <textarea name="text" placeholder="What are you humming about?"></textarea>
+
+            <textarea name="text" class="emoji-wysiwyg-editor form-control textarea-control" placeholder="What are you humming about?" data-type="input" data-emojiable="true"></textarea>
             <input type="submit" value="Tweet">
             <span class="counter">140</span>
           </form>
@@ -67,6 +73,14 @@
   <!-- External JS -->
   <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
+  <!-- Emoji -->
+  <script src="/emoji-picker/lib/js/nanoscroller.min.js"></script>
+  <script src="/emoji-picker/lib/js/tether.min.js"></script>
+  <script src="/emoji-picker/lib/js/config.js"></script>
+  <script src="/emoji-picker/lib/js/util.js"></script>
+  <script src="/emoji-picker/lib/js/jquery.emojiarea.js"></script>
+  <script src="/emoji-picker/lib/js/emoji-picker.js"></script>
+
   <!-- Alert -->
   <script type='text/javascript' src="/scripts/dist/sweetalert.min.js"></script>
 
@@ -75,6 +89,19 @@
 
   <!-- JS for character counter -->
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-
+ <script>
+    $(function() {
+      // Initializes and creates emoji set from sprite sheet
+      window.emojiPicker = new EmojiPicker({
+        emojiable_selector: '[data-emojiable=true]',
+        assetsPath: '/emoji-picker/lib/img',
+        popupButtonClasses: 'fa fa-smile-o'
+      });
+      // Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
+      // You may want to delay this step if you have dynamically created input fields that appear later in the loading process
+      // It can be called as many times as necessary; previously converted input fields will not be converted again
+      window.emojiPicker.discover();
+    });
+  </script>
   </body>
 </html>
