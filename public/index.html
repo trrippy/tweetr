@@ -53,15 +53,15 @@
     </main>
 
   <!-- External JS -->
-  <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+  <script type="text/javascript" src="/scripts/jquery-2.2.3.min.js"></script>
 
   <!-- Emoji -->
-  <script src="/emoji-picker/lib/js/nanoscroller.min.js"></script>
-  <script src="/emoji-picker/lib/js/tether.min.js"></script>
-  <script src="/emoji-picker/lib/js/config.js"></script>
-  <script src="/emoji-picker/lib/js/util.js"></script>
-  <script src="/emoji-picker/lib/js/jquery.emojiarea.js"></script>
-  <script src="/emoji-picker/lib/js/emoji-picker.js"></script>
+  <script src="/scripts/lib/js/nanoscroller.min.js"></script>
+  <script src="/scripts/lib/js/tether.min.js"></script>
+  <script src="/scripts/lib/js/config.js"></script>
+  <script src="/scripts/lib/js/util.js"></script>
+  <script src="/scripts/lib/js/jquery.emojiarea.js"></script>
+  <script src="/scripts/lib/js/emoji-picker.js"></script>
 
   <!-- Alert -->
   <script type='text/javascript' src="/scripts/dist/sweetalert.min.js"></script>
@@ -76,7 +76,7 @@
       // Initializes and creates emoji set from sprite sheet
       window.emojiPicker = new EmojiPicker({
         emojiable_selector: '[data-emojiable=true]',
-        assetsPath: '/emoji-picker/lib/img',
+        assetsPath: '/scripts/lib/img/',
         popupButtonClasses: 'fa fa-smile-o'
       });
       // Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
