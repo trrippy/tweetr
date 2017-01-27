@@ -106,7 +106,7 @@ $(function() {
 
     if ($('.new-tweet').is(":hidden")) {
       $('.new-tweet').slideToggle();
-      $('textarea').focus();
+      $('.textarea-control').focus();
     }
   });
 
@@ -142,11 +142,11 @@ $(function() {
             title: "Error!",
             text: "You have more than 140 characters!",
             type: "error",
-            confirmButtonText: "But I have so much to say!",
+            confirmButtonText: "Fine!",
             allowOutsideClick: true
           });
-         }
         }
+      }
       setTimeout(errorPopup, 1000);
     }
   });
@@ -154,7 +154,7 @@ $(function() {
   $(".new-tweet").on(
     "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend",
     function() {
-        $(this).removeClass("animated shake");
+      $(this).removeClass("animated shake");
     }
 );
 

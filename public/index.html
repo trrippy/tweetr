@@ -5,7 +5,6 @@
     <title>Tweeter - Home Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
 
@@ -27,7 +26,7 @@
     <!-- CSS for animations -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
-    <!-- CSS for sweet -->
+    <!-- CSS for sweet error messages -->
     <link rel="stylesheet" type="text/css" href="/scripts/dist/sweetalert.css">
 
     <!-- CSS for emojis -->
@@ -57,7 +56,6 @@
       <section class="new-tweet">
           <h2 id='tweetTitle'>Compose Tweet</h2>
           <form action='/tweets/' method='POST'>
-
             <textarea name="text" class="emoji-wysiwyg-editor form-control textarea-control" placeholder="What are you humming about?" data-type="input" data-emojiable="true"></textarea>
             <input type="submit" value="Tweet">
             <span class="counter">140</span>
@@ -89,7 +87,7 @@
 
   <!-- JS for character counter -->
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
- <script>
+  <script>
     $(function() {
       // Initializes and creates emoji set from sprite sheet
       window.emojiPicker = new EmojiPicker({
@@ -103,5 +101,6 @@
       window.emojiPicker.discover();
     });
   </script>
+
   </body>
 </html>

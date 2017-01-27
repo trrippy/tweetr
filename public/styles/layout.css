@@ -1,9 +1,31 @@
 
-html {
-  box-sizing: border-box;
-}
 *, *:before, *:after {
   box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  color: #244751;
+  background-color: #F3F3F3;
+  font-family: 'Roboto', sans-serif;
+}
+
+button {
+  float: right;
+  width: 120px;
+  height: 60px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: #E7FDFF;
+  border: 1px solid black;
+ }
+
+button:hover {
+  background-color: #fff;
+ }
+
+html {
+  box-sizing: border-box;
 }
 
 nav {
@@ -14,15 +36,6 @@ nav {
   height: 80px;
   padding-left: 2em;
   padding-right: 2em;
-
-}
-
-body {
-  margin: 0;
-  color: #244751;
-  background-color: #F3F3F3;
-  font-family: 'Roboto', sans-serif;
-;
 }
 
 main {
@@ -32,32 +45,18 @@ main {
   margin: auto;
 }
 
-#nav-bar .logo {
-  float:left;
-  width: 80px;
-  height: 80px;
- }
-
-#nav-bar .header {
+.header {
   float: left;
   padding-left: 10px;
   line-height: 80px;
   font-size: 2em;
  }
 
- #nav-bar button {
-  float: right;
-  width: 120px;
-  height: 60px;
-  margin: 10px;
-  border-radius: 10px;
-  background-color: #E7FDFF;
-  border: 1px solid black;
- }
-
- #nav-bar button:hover {
-  background-color: #fff;
- }
+.logo {
+  float:left;
+  width: 80px;
+  height: 80px;
+}
 
  @media screen and (max-width: 450px) {
    .container {
