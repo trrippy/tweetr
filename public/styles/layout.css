@@ -1,8 +1,4 @@
-/*
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://css-tricks.com/international-box-sizing-awareness-day/
- * Do not modify these two selectors, please
- */
+
 html {
   box-sizing: border-box;
 }
@@ -10,15 +6,6 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
-
-/*
-h1, h2, h3, h4, h5 {
-  font-family: 'Open Sans', sans-serif;
-}
-*/
 nav {
   z-index: +1; position: fixed;
   width: 100%;
@@ -71,3 +58,17 @@ main {
  #nav-bar button:hover {
   background-color: #fff;
  }
+
+ @media screen and (max-width: 450px) {
+   .container {
+    width: 100%;
+  }
+
+  #nav-bar .header {
+    width: 25%;
+  }
+
+  #nav-bar #nav-text {
+    visibility: hidden;
+  }
+

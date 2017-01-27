@@ -128,6 +128,26 @@ $(function() {
       $('.counter').text('140');
     } else {
       $(".new-tweet").addClass("animated shake");
+      function errorPopup() {
+        if (!$userText.length) {
+          swal({
+            title: "Error!",
+            text: "You cannot submit an empty tweet",
+            type: "error",
+            confirmButtonText: "Okay",
+            allowOutsideClick: true
+          });
+        } else {
+          swal({
+            title: "Error!",
+            text: "You have more than 140 characters!",
+            type: "error",
+            confirmButtonText: "But I have so much to say!",
+            allowOutsideClick: true
+          });
+         }
+        }
+      setTimeout(errorPopup, 1000);
     }
   });
 

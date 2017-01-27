@@ -3,6 +3,7 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
@@ -22,8 +23,11 @@
     <!-- CSS for the tweets -->
     <link rel="stylesheet" href="/styles/tweet-show.css" type="text/css" />
 
-      <!-- CSS for animations -->
+    <!-- CSS for animations -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+  <!-- CSS for sweet -->
+  <link rel="stylesheet" type="text/css" href="/scripts/dist/sweetalert.css">
 
   </head>
 
@@ -36,7 +40,7 @@
       <button class='compose-new'>
         <span>
         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-        Compose
+        <span id='nav-text'>Compose</span>
         </span>
       </button>
     </nav>
@@ -62,6 +66,9 @@
 
   <!-- External JS -->
   <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+
+  <!-- Alert -->
+  <script type='text/javascript' src="/scripts/dist/sweetalert.min.js"></script>
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/app.js"></script>
