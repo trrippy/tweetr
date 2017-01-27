@@ -88,9 +88,10 @@ img.emoji {
 }
 
 .emoji-wysiwyg-editor {
+    background-color: #fff;
     padding: 6px;
     padding-right: 35px;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
     min-height: 35px; /* 35 */
     height: 60px;
     max-height: 284px;

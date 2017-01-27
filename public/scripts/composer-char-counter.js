@@ -1,8 +1,8 @@
 $(document).ready(function() {
-  $('textarea').on('input', function(){
+  $('form').on('input', function(){
     let totalChars = 140;
-    let charsInBox = +$(this).val().length;
-    let counter = $('.new-tweet').find('.counter');
+    let charsInBox = ($('.textarea-control').text().length);
+    let counter = $('form').find('.counter');
     counter.text(totalChars - charsInBox);
     if (charsInBox > 140) {
       counter.css({'color': 'red'});

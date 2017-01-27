@@ -124,7 +124,7 @@ $(function() {
         $('#tweet-container').empty();
         loadTweets();
       });
-      $('textarea').val('');
+      $('.textarea-control').text('');
       $('.counter').text('140');
     } else {
       $(".new-tweet").addClass("animated shake");
