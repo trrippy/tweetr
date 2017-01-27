@@ -1,0 +1,60 @@
+article {
+  border: 1px solid black;
+  margin: 2em;
+  background-color: #fff;
+  border-radius: 10px;
+  opacity: .75;
+}
+
+article header {
+  background-color: #eee;
+  padding: .5em .5em 1.75em .5em;
+  border-radius: 10px 10px 0px 0px;
+}
+
+article:hover {
+  opacity: 1;
+}
+
+article img {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  float:left;
+}
+
+article .atName {
+  float:right;
+}
+
+article .profileName {
+  text-align: left;
+  line-height: 30px;
+  font-size: 1.5em;
+  padding-left: .5em;
+  margin-bottom: 10px
+}
+
+article .userMessage {
+  padding: 0 1em 0 1em;
+  word-spacing: break-word;
+}
+
+article footer {
+  border-top: 1px solid #eee;
+  font-size: .7em;
+  padding: .5em 1em 1em 1em;
+}
+
+article .icons {
+  float:right;
+  visibility: hidden;
+}
+article:hover .icons{
+  visibility: visible;
+}
+
+article .icons i {
+  padding-right: .5em;
+}
+
